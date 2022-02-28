@@ -1,0 +1,138 @@
+.container {
+  display: flex;
+  background-color: #00a1f5;
+  flex-direction: row;
+  align-items: center;
+}
+.item1 {
+  flex: 1;
+}
+.item2 {
+  flex: 3;
+}
+.item3 {
+  flex: 1;
+}
+
+/* Aqui es la barra secundaria de navegación*/
+
+.container1 {
+  display: flex;
+  background-color: #6ddef6;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+}
+
+.item4 {
+  flex: 4;
+  text-decoration: none;
+  font-size: small;
+  justify-content: center;
+}
+.item5 {
+  flex: 1;
+  font-size: small;
+}
+.item6 {
+  flex: 1;
+  font-size: small;
+}
+.item7 {
+  flex: 1;
+  font-size: small;
+}
+/* Aqui es la barra secundaria de navegación de los details */
+.button {
+  background-color: #5ac5dd;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 50px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+}
+.button:hover {
+  background-color: #0d4870;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6em;
+  background-color: transparent;
+}
+.logo,
+.logonormal {
+  font-family: Doggie;
+  color: #ed5bf0;
+  font-size: 2.5em;
+  font-weight: 20em;
+  -webkit-text-stroke: 2px black;
+  margin-left: 1.85em;
+  user-select: none;
+}
+
+.logo {
+  animation-name: parpadeo;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-name: parpadeo;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+}
+
+.logo:hover,
+.logonormal:hover {
+  color: #744e72;
+  -webkit-text-stroke: 2px black;
+}
+@font-face {
+  font-family: Doggie;
+  src: local("logo"), local("logo"), url(./fonts/logo.ttf);
+  font-weight: bold;
+}
+
+@-moz-keyframes parpadeo {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+    color: white;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes parpadeo {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+    color: white;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes parpadeo {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+    color: white;
+  }
+  100% {
+    opacity: 1;
+  }
+}

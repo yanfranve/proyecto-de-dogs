@@ -43,7 +43,7 @@ router.get("/", (req, res, next) => {
 });
 
 /// OBTIENE UN LISTADO DE LOS DOGS INGRESADOS POR QUERY
-router.get("/:name", (req, res, next) => {
+router.get("/dogs/", (req, res, next) => {
   const { name } = req.query;
   let nombreApi = axios.get(
     `https://api.thedogapi.com/v1/breeds?api_key=${API_KEY_1}`
