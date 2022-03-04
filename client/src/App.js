@@ -6,7 +6,7 @@ import Banner from "./components/Banner";
 import Dogs from "./components/Dogs";
 import DogsDetail from "./components/DogsDetail/DogsDetail";
 import FooterDogs from "./components/FooterDogs";
-import Home from "./components/Home";
+import LandingPage from "./components/LandingPage/LandingPage";
 import NavBar from "./components/NavBar/NavBar";
 import NavBarDetails from "./components/NavBar/NavBarDetails";
 import NavBarFiltros from "./components/NavBar/NavBarFiltros";
@@ -37,7 +37,7 @@ function App() {
           <FooterDogs />
         </Route>
         <Route path="/">
-          <Home />
+          <LandingPage />
         </Route>
       </Switch>
     </div>

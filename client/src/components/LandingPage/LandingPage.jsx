@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-var home = require("./home.module.css");
+var home = require("./LandingPage.module.css");
 
 export default function Home() {
   //Me lleva hacia home

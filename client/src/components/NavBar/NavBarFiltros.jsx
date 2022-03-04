@@ -17,7 +17,9 @@ export default function NavBarFiltros() {
       <div className={navbarfiltros.item7}>
         <Temperament />
       </div>
-      <div className={navbarfiltros.item4}></div>
+      <div className={navbarfiltros.item4}>
+        <button>Mostrar todo</button>
+      </div>
     </div>
   );
 }

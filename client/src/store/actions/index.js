@@ -1,7 +1,7 @@
 import axios from "axios";
 export const GET_DOGS = "GET_DOGS";
 export const SEARCH_NAME_DOGS = "SEARCH_NAME_DOGS";
-export const SEARCH_ID_DOGS = "SEARCH_ID_DOGS";
+export const GET_DOGS_ID = "GET_DOGS_ID";
 export const TEMPERAMENTS_DOGS = "TEMPERAMENTS_DOGS";
 export const SORT = "SORT";
 export const SORT_RAZA = "SORT_RAZA";
@@ -36,8 +36,9 @@ export function getDogsSearch(name) {
 export function getDogsId(id) {
   return function (dispatch) {
     return axios.get("http://localhost:3001/dogs/" + id).then((response) => {
+      console.log(response);
       dispatch({
-        type: SEARCH_ID_DOGS,
+        type: GET_DOGS_ID,
         payload: response.data,
       });
     });

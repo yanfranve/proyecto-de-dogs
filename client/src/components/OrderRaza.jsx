@@ -14,6 +14,7 @@ export default function OrderRaza(){
         <select name="select" onChange={onSelectChange} className={inputorder.selectorder}>
             <option value={ASCENDENTE}>Peso mínimo</option>
             <option value={DESCENDENTE}>Peso máximo</option>
+            
         </select>
     </div>
 }

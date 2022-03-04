@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 import { ASCENDENTE, DESCENDENTE } from "../../constants/orderconstants";
 import {
   GET_DOGS,
-  SEARCH_ID_DOGS,
+  GET_DOGS_ID,
   SEARCH_NAME_DOGS,
   SORT,
   SORT_RAZA,
@@ -28,13 +29,28 @@ export default function reducer(state = initialState, action) {
         ...state,
         dogsfiltered: action.payload,
       };
-    case SEARCH_ID_DOGS:
+    case GET_DOGS_ID:
       return {
         ...state,
         dogsfiltered: action.payload,
       };
     case SORT:
       let orderDogs = [...state.dogs];
+
+      if (action.payload === "alph-asc") {
+        orderDogs = orderDogs.sort((a, b) => {
+          if (a.name > b.name) return 1;
+          if (a.name < b.name) return -1;
+          return 0;
+        });
+      }
+      if (action.payload === "alph-desc") {
+        orderDogs = orderDogs.sort((a, b) => {
+          if (a.name < b.name) return 1;
+          if (a.name > b.name) return -1;
+          return 0;
+        });
+      }
       orderDogs = orderDogs.sort((a, b) => {
         if (a.name < b.name) {
           return action.payload === ASCENDENTE ? -1 : 1;
