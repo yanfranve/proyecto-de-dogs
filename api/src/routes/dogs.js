@@ -11,6 +11,7 @@ router.get("/", (req, res, next) => {
     `https://api.thedogapi.com/v1/breeds?api_key=${API_KEY_1}`
   );
   let razasDb = Dogs.findAll();
+  console.log(razasApils);
   let newArray = [];
   let newArrayDb = [];
   Promise.all([razasApi, razasDb]).then((response) => {
