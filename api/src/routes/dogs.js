@@ -42,7 +42,7 @@ router.get("/", (req, res, next) => {
     res.send(unionArray);
   });
 });
-
+router.get("/tes",(req, res, next)=> res.status(200).send("tes")) 
 /// OBTIENE UN LISTADO DE LOS DOGS INGRESADOS POR QUERY
 router.get("/dogs/", (req, res, next) => {
   const { name } = req.query;
