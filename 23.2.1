@@ -1,0 +1,20 @@
+import requests
+
+def generate_pr_links(owner, repo):
+    url = f"https://api.github.com/repos/{owner}/{repo}/pulls"
+    response = requests.get(url)
+    prs = response.json()
+
+    links = []
+    for pr in prs:
+        number = pr['number']
+        link = f"https://github.com/{owner}/{repo}/pull/{number}"
+        links.append(link)
+
+    return links
+
+# Example usage
+owner = "yanfranve"
+repo = "proyecto-de-dogs"
+pr_links = generate_pr_links(owner, repo)
+print(pr_links)
