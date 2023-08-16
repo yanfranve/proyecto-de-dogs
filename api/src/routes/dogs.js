@@ -242,11 +242,11 @@ router.get("/:id", (req, res, next) => {
 
 module.exports = router; //exporto las rutas
 
-// return Dogs.findAll().then((perros) =>{ // metodo de sequelize, busca todos los elementos
-//     res.send(perros)
-// }).catch ((e) =>{
-//     next(e)
-// })
+ return Dogs.findAll().then((perros) =>{ // metodo de sequelize, busca todos los elementos
+     res.send(perros)
+ }).catch ((e) =>{
+     next(e)
+ })
 
 router.post("/", async (req, res, next) => {
   try {
