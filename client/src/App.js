@@ -1,4 +1,5 @@
 import { Route, Switch } from "react-router";
+import React from 'react';
 import "./App.css";
 //import AddBoton from './components/AddBoton';
 import AddDogs from "./components/AddDogs";

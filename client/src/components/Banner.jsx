@@ -1,3 +1,4 @@
+import React from 'react';
 var banner = require("./banner.module.css");
 export default function Banner() {
   return (

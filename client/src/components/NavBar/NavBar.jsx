@@ -1,3 +1,4 @@
+import React from 'react';
 import AddBoton from "../AddBoton";
 import AddDogs from "../AddDogs";
 import SearchBar from "../SearchBar";

@@ -1,3 +1,4 @@
+import React from 'react';
 var paginadocss = require("./dogs.module.css");
 
 export default function Paginado({ dogs, dogsForPage, paginado }) {

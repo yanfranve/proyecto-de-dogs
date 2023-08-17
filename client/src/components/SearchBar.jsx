@@ -1,4 +1,5 @@
 import { useState } from "react"
+import React from 'react';
 import { getDogsId, getDogsSearch } from "../store/actions"
 import { useDispatch } from "react-redux"
 var searchbar = require('./search.module.css')

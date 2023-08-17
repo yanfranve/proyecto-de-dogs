@@ -1,3 +1,4 @@
+import React from 'react';
 var footer = require("./dogs.module.css");
 
 export default function FooterDogs() {
