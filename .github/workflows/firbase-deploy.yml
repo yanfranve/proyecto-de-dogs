@@ -26,3 +26,17 @@ jobs:
           npm ci
           npm run build
           firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}
+         
+           - name: Obtener número de PR
+            run: echo "PR_NUMBER=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+
+          - name: Generar URL
+            run: |
+           PR_NUMBER=${{ env.PR_NUMBER }}
+           URL="https://miapp.com/pr/${PR_NUMBER}"
+           echo "URL=${URL}" >> $GITHUB_ENV
+
+          - name: Display URL
+           run: echo "Generated URL:${{ steps.generate_url.outputs.url }}"
+          - name: Guardar URL
+          run: echo "${URL}" >> url.txt
