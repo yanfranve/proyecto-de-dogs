@@ -202,43 +202,43 @@ router.get("/:id", (req, res, next) => {
 
 // })
 
-/// CREA UN NUEVO DOG
-// router.post("/", async (req, res, next)=>{
-//     let razasidApi =  axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`);
-//     let razasidDb = Dogs.findAll();
-//     Promise.all([
-//         razasidApi,
-//         razasidDb
-//     ]).then(async (response)=>{
-//         const[razasidApi, razasDb]= response
-//         let sumasArray = [...razasidApi, ...razasDb]
-//         let longituArray = sumasArray.length
-//         console.log(longituArray)
-//         let id = longituArray + 1
-//         const {name, height, weight, years} = req.body;
-//         const newDog = await Dogs.create({  //creamos una nueva raza en la base de datos
-//             id,
-//             name,
-//             height,
-//             weight,
-//             years,
-//         })
-//         res.status(201).send(newDog)
-//     })
-//     // try {
-//     //     const {name, height, weight, years, id} = req.body;
-//     //     const newDog = await Dogs.create({  //creamos una nueva raza en la base de datos
-//     //         id,
-//     //         name,
-//     //         height,
-//     //         weight,
-//     //         years,
-//     //     })
-//     //     res.status(201).send(newDog)
-//     // } catch (e) {
-//     //     next(e)
-//     // }
-// })
+// CREA UN NUEVO DOG
+router.post("/", async (req, res, next)=>{
+    let razasidApi =  axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`);
+    let razasidDb = Dogs.findAll();
+    Promise.all([
+        razasidApi,
+        razasidDb
+    ]).then(async (response)=>{
+        const[razasidApi, razasDb]= response
+        let sumasArray = [...razasidApi, ...razasDb]
+        let longituArray = sumasArray.length
+        console.log(longituArray)
+        let id = longituArray + 1
+        const {name, height, weight, years} = req.body;
+        const newDog = await Dogs.create({  //creamos una nueva raza en la base de datos
+            id,
+            name,
+            height,
+            weight,
+            years,
+        })
+        res.status(201).send(newDog)
+    })
+    try {
+        const {name, height, weight, years, id} = req.body;
+        const newDog = await Dogs.create({  //creamos una nueva raza en la base de datos
+            id,
+            name,
+            height,
+            weight,
+            years,
+        })
+        res.status(201).send(newDog)
+    } catch (e) {
+        next(e)
+    }
+})
 
 module.exports = router; //exporto las rutas
 
