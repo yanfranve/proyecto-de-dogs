@@ -24,7 +24,7 @@ jobs:
       - name: Build and deploy
         run: |
           npm ci
-          npm run build
+          npm start
           firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}
          
            - name: Obtener número de PR
