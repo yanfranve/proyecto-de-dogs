@@ -29,7 +29,7 @@ jobs:
       - name: Send email notification
         uses: actions/github-script@v4
         env:
-          EMAIL_TO: tu.correo@example.com
+          EMAIL_TO: yanfranve@gmail.com
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
