@@ -26,3 +26,22 @@ jobs:
 
       - name: Deploy to Vercel
         run: npx vercel --token ${{ secrets.VERCEL_TOKEN }} --prod
+      - name: Send email notification
+        uses: actions/github-script@v4
+        env:
+          EMAIL_TO: yanfranve@gmail.com
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const emailTo = process.env.EMAIL_TO;
+            const subject = "Nuevo enlace de vista previa en Vercel";
+            const body = "Se ha creado un nuevo enlace de vista previa:\n\n" +
+                         "Enlace: " + process.env.VERCEL_URL;
+
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `${emailTo}\n\n${subject}\n\n${body}`
+            });
+
