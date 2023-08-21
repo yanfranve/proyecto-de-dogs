@@ -25,7 +25,7 @@ jobs:
 
       - name: Build and start backend
         run: |
-          cd /f/proyecto-de-dogs/api/package.json
+          cd /f/proyecto-de-dogs/api
           npm run build
           npm start &
           background: true
