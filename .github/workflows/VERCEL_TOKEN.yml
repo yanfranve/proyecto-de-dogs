@@ -3,7 +3,7 @@ name: Preview Deployment
 on:
   pull_request:
     branches:
-      - main  
+      - master 
 
 jobs:
   build-and-deploy:
@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run build
+        run: npm start
 
       - name: Deploy to Vercel
         run: npx vercel --token ${{ secrets.VERCEL_TOKEN }} --prod
