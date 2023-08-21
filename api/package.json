@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon -L",
-    "test": "mocha -w ./tests/**/*.spec.js"
+    "test": "mocha -w ./tests/**/*.spec.js",
+  
+    "clean-install": "rm -rf node_modules && rm -f package-lock.json && npm cache clean --force && npm install"
+    
+    
   },
   "author": "Henry",
   "license": "ISC",

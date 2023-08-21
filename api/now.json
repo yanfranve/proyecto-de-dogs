@@ -1,7 +1,11 @@
 {
     "version": 2,
     "builds": [
-      { "src": "index.js", "use": "@vercel/node" }
+      { "src": "f/proyecto-de-dogs/api", 
+      "use": "@vercel/node" ,
+      "config": {
+        "buildCommand": "npm run clean-install"
+      }}
     ]
   }
 
