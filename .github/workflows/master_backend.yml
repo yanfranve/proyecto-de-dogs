@@ -25,9 +25,9 @@ jobs:
 
       - name: Build and start backend
         run: |
-          
+          npm run build
           npm start &
-        background: true
+          background: true
 
       - name: Wait for backend to start
         run: sleep 10 # Asegúrate de dar tiempo suficiente para que el backend se inicie
