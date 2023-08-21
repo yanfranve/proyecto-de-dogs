@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { axios } = require('axios');
+require('axios');
 const dogsRequire = require('./dogs'); // cargo las rutas de dogs
 const temperamentsRequire = require('./temperament'); // cargo las rutas de temperamento
 // Importar todos los routers;

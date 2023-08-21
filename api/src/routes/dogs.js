@@ -10,14 +10,19 @@ router.get("/", (req, res, next) => {
   let razasApi = axios.get(
     `https://api.thedogapi.com/v1/breeds?api_key=${API_KEY_1}`
   );
+  razasApi.then(response => {
+    console.log(response.data);  // Aquí accedemos a los datos de la respuesta
+  }).catch(error => {
+    console.error(error);  // Manejamos cualquier error de la solicitud
   let razasDb = Dogs.findAll();
-  console.log(razasApils);
   let newArray = [];
   let newArrayDb = [];
   Promise.all([razasApi, razasDb]).then((response) => {
     const [razasApi, razasDb] = response;
     // razasApi.data[0].name
+    });
     let razas = razasApi.data;
+   
     for (var i = 0; i < razas.length; i++) {
       let obj = {
         id: razas[i].id,

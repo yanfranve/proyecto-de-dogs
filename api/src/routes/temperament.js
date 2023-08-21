@@ -53,7 +53,8 @@ router.get('/',  (req, res, next)=>{
         if(response.length === 0){
             axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`)
             .then((responseApi)=>{
-                let alltemperaments = responseApi.data
+                let alltemperaments = responseApi.data;
+                console.log(responseApi.data);
                 let newarray = []
                 for(var i = 0; i < alltemperaments.length; i++){
                     let name = alltemperaments[i].temperament
